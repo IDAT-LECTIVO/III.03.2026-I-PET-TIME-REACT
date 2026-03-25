@@ -2,8 +2,12 @@ import { useState } from "react";
 import { RegisterFirstStep } from "../components/register/FirstStep";
 import { RegisterSecondStep } from "../components/register/SecondStep";
 import { RegisterThirdStep } from "../components/register/ThirdStep";
+import { useNavigate } from "react-router-dom";
 
 export function Register() {
+
+    // navigate
+    const navigate = useNavigate();
 
     const [step, setStep] = useState(1);
     const [isCompleteStepOne, setIsCompleteStepOne] = useState(false);
@@ -62,6 +66,9 @@ export function Register() {
         petGender
       }
       console.log(finalForm);
+
+      // redirigir al home
+      navigate("/home");
     }
 
   return (
